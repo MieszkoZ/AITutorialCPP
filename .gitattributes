@@ -1,22 +1,11 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#
+# This file contains rules that control how Git handles binary and text files, including line endings
+#
+ 
 
-# Custom for Visual Studio
-*.cs     diff=csharp
-*.sln    merge=union
-*.csproj merge=union
-*.vbproj merge=union
-*.fsproj merge=union
-*.dbproj merge=union
+# Make sure Windows batch files preserve CR/LF line endings, otherwise they may not be able to execute.  Windows
+# batch files require a CR/LF for labels to work properly, otherwise they may fail when labels straddle 512-byte
+# block boundaries.  This is important when files are downloaded through a zip archive that was authored on a
+# Linux machine (the default behavior on GitHub)
 
-# Standard to msysgit
-*.doc	 diff=astextplain
-*.DOC	 diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.dot  diff=astextplain
-*.DOT  diff=astextplain
-*.pdf  diff=astextplain
-*.PDF	 diff=astextplain
-*.rtf	 diff=astextplain
-*.RTF	 diff=astextplain
+*.bat eol=crlf
