@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "0.0",
+	"EngineVersion": "4.3.0-0+UE4",
+	"PackageFileUE4Version": 376,
+	"PackageFileLicenseeUE4Version": 0,
+	"EngineAssociation": "{479874E9-4199-3762-E81B-89A8027AA8C8}",
+	"FriendlyName": "",
+	"Description": "",
+	"Category": "",
+	"CreatedBy": "",
+	"CreatedByURL": "",
+	"Modules": [
+		{
+			"Name": "AITutorialCPP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"EpicSampleNameHash": "0"
+}
