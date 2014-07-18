@@ -33,7 +33,7 @@ CMakeLists.txt
 /Binaries/**
 
 # Ignore various other dependencies that are never checked in
-!/Content/**
+/Content/**
 
 # Ignore any saved local files
 /Saved/**
