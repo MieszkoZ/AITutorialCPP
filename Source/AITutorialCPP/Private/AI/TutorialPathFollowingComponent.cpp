@@ -4,12 +4,6 @@
 #include "AI/TutorialPathFollowingComponent.h"
 #include "Navigation/NavArea_Jump.h"
 
-UTutorialPathFollowingComponent::UTutorialPathFollowingComponent(const FPostConstructInitializeProperties& PCIP)
-: Super(PCIP)
-{
-
-}
-
 void UTutorialPathFollowingComponent::SetMoveSegment(int32 SegmentStartIndex)
 {
 	Super::SetMoveSegment(SegmentStartIndex);

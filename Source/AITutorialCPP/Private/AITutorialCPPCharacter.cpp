@@ -3,11 +3,15 @@
 #include "AITutorialCPP.h"
 #include "AITutorialCPPCharacter.h"
 
-AAITutorialCPPCharacter::AAITutorialCPPCharacter(const class FPostConstructInitializeProperties& PCIP)
-	: Super(PCIP)
+AAITutorialCPPCharacter::AAITutorialCPPCharacter(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
 {
 	// Set size for player capsule
-	CapsuleComponent->InitCapsuleSize(42.f, 96.0f);
+	UCapsuleComponent* CapsuleComponent = GetCapsuleComponent();
+	if (CapsuleComponent)
+	{
+		CapsuleComponent->InitCapsuleSize(42.f, 96.0f);
+	}
 
 	// Don't rotate character to camera direction
 	bUseControllerRotationPitch = false;
@@ -15,13 +19,17 @@ AAITutorialCPPCharacter::AAITutorialCPPCharacter(const class FPostConstructIniti
 	bUseControllerRotationRoll = false;
 
 	// Configure character movement
-	CharacterMovement->bOrientRotationToMovement = true; // Rotate character to moving direction
-	CharacterMovement->RotationRate = FRotator(0.f, 640.f, 0.f);
-	CharacterMovement->bConstrainToPlane = true;
-	CharacterMovement->bSnapToPlaneAtStart = true;
+	UCharacterMovementComponent* CharacterMovement = Cast<UCharacterMovementComponent>(GetMovementComponent());
+	if (CharacterMovement)
+	{
+		CharacterMovement->bOrientRotationToMovement = true; // Rotate character to moving direction
+		CharacterMovement->RotationRate = FRotator(0.f, 640.f, 0.f);
+		CharacterMovement->bConstrainToPlane = true;
+		CharacterMovement->bSnapToPlaneAtStart = true;
+	}
 
 	// Create a camera boom...
-	CameraBoom = PCIP.CreateDefaultSubobject<USpringArmComponent>(this, TEXT("CameraBoom"));
+	CameraBoom = ObjectInitializer.CreateDefaultSubobject<USpringArmComponent>(this, TEXT("CameraBoom"));
 	CameraBoom->AttachTo(RootComponent);
 	CameraBoom->bAbsoluteRotation = true; // Don't want arm to rotate when character does
 	CameraBoom->TargetArmLength = 800.f;
@@ -29,8 +37,8 @@ AAITutorialCPPCharacter::AAITutorialCPPCharacter(const class FPostConstructIniti
 	CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
 
 	// Create a camera...
-	TopDownCameraComponent = PCIP.CreateDefaultSubobject<UCameraComponent>(this, TEXT("TopDownCamera"));
+	TopDownCameraComponent = ObjectInitializer.CreateDefaultSubobject<UCameraComponent>(this, TEXT("TopDownCamera"));
 	TopDownCameraComponent->AttachTo(CameraBoom, USpringArmComponent::SocketName);
-	TopDownCameraComponent->bUseControllerViewRotation = false; // Camera does not rotate relative to arm
+	TopDownCameraComponent->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
 }

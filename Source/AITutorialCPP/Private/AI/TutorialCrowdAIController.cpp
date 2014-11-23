@@ -4,8 +4,8 @@
 #include "AI/TutorialCrowdAIController.h"
 #include "Navigation/CrowdFollowingComponent.h"
 
-ATutorialCrowdAIController::ATutorialCrowdAIController(const FPostConstructInitializeProperties& PCIP)
-: Super(PCIP.SetDefaultSubobjectClass<UCrowdFollowingComponent>(TEXT("PathFollowingComponent")))
+ATutorialCrowdAIController::ATutorialCrowdAIController(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UCrowdFollowingComponent>(TEXT("PathFollowingComponent")))
 {
 
 }

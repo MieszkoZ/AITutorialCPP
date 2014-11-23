@@ -4,7 +4,8 @@
 #include "AITutorialCPPGameMode.h"
 #include "AITutorialCPPPlayerController.h"
 
-AAITutorialCPPGameMode::AAITutorialCPPGameMode(const class FPostConstructInitializeProperties& PCIP) : Super(PCIP)
+AAITutorialCPPGameMode::AAITutorialCPPGameMode(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
 {
 	// use our custom PlayerController class
 	PlayerControllerClass = AAITutorialCPPPlayerController::StaticClass();

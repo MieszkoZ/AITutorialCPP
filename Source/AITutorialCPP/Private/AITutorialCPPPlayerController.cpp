@@ -3,8 +3,8 @@
 #include "AITutorialCPP.h"
 #include "AITutorialCPPPlayerController.h"
 
-AAITutorialCPPPlayerController::AAITutorialCPPPlayerController(const class FPostConstructInitializeProperties& PCIP)
-	: Super(PCIP)
+AAITutorialCPPPlayerController::AAITutorialCPPPlayerController(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
 {
 	bShowMouseCursor = true;
 	DefaultMouseCursor = EMouseCursor::Crosshairs;

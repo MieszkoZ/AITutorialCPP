@@ -3,8 +3,8 @@
 #include "AITutorialCPP.h"
 #include "Navigation/NavArea_Jump.h"
 
-UNavArea_Jump::UNavArea_Jump(const class FPostConstructInitializeProperties& PCIP) 
-: Super(PCIP)
+UNavArea_Jump::UNavArea_Jump(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer)
 {
 	FNavAreaHelper::Set(AreaFlags, ENavAreaFlag::Jump);
 }

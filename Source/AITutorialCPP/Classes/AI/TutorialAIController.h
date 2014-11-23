@@ -8,5 +8,7 @@
 UCLASS()
 class ATutorialAIController : public AAIController
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
+public:
+	ATutorialAIController(const FObjectInitializer& ObjectInitializer);
 };

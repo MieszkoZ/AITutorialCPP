@@ -4,8 +4,8 @@
 #include "AI/TutorialAIController.h"
 #include "AI/TutorialPathFollowingComponent.h"
 
-ATutorialAIController::ATutorialAIController(const FPostConstructInitializeProperties& PCIP)
-: Super(PCIP.SetDefaultSubobjectClass<UTutorialPathFollowingComponent>(TEXT("PathFollowingComponent")))
+ATutorialAIController::ATutorialAIController(const FObjectInitializer& ObjectInitializer)
+	: Super(ObjectInitializer.SetDefaultSubobjectClass<UTutorialPathFollowingComponent>(TEXT("PathFollowingComponent")))
 {
 
 }

@@ -11,7 +11,7 @@ class UCharacterMovementComponent;
 UCLASS()
 class UTutorialPathFollowingComponent : public UPathFollowingComponent
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
 protected:
 	/** cached UCharacterMovementComponent */
