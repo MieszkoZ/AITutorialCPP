@@ -3,6 +3,7 @@
 #pragma once
 
 #include "AI/Navigation/NavAreas/NavArea.h"
+#include "AI/Navigation/RecastNavMesh.h"
 #include "NavArea_Jump.generated.h"
 
 UENUM()
