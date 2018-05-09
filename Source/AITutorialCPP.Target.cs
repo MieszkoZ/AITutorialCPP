@@ -5,21 +5,13 @@ using System.Collections.Generic;
 
 public class AITutorialCPPTarget : TargetRules
 {
-	public AITutorialCPPTarget(TargetInfo Target)
+	public AITutorialCPPTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
+		ExtraModuleNames.Add("AITutorialCPP");
 	}
 
 	//
 	// TargetRules interface.
 	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.Add("AITutorialCPP");
-	}
 }
