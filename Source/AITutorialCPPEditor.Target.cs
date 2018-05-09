@@ -5,21 +5,14 @@ using System.Collections.Generic;
 
 public class AITutorialCPPEditorTarget : TargetRules
 {
-	public AITutorialCPPEditorTarget(TargetInfo Target)
+	public AITutorialCPPEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
+
+		ExtraModuleNames.Add("AITutorialCPP");
 	}
 
 	//
 	// TargetRules interface.
 	//
-
-	public override void SetupBinaries(
-		TargetInfo Target,
-		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
-		ref List<string> OutExtraModuleNames
-		)
-	{
-		OutExtraModuleNames.Add("AITutorialCPP");
-	}
 }

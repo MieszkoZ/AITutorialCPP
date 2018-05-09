@@ -4,7 +4,7 @@ using UnrealBuildTool;
 
 public class AITutorialCPP : ModuleRules
 {
-	public AITutorialCPP(TargetInfo Target)
+	public AITutorialCPP(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AIModule" });
 	}
